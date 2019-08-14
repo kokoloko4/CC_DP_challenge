@@ -1,3 +1,5 @@
+import Store.Products;
+
 import java.util.Queue;
 
 public class Cookie extends Products {
