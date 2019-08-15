@@ -1,20 +1,17 @@
-package Store;
+package Inventory;
 
+import com.github.javafaker.Faker;
+
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class Product{
-    public String name;
-    public String price;
-    public String quantity;
-    public Queue<Item> items;
+public abstract class Product{
 
-    public Product(String name, String price, String quantity, Queue<Item> items) {
-        this.name = name;
-        this.price = price;
-        this.quantity = quantity;
-        this.items = items;
-    }
+    protected String flavor;
+    protected String price;
+    protected String quantity;
+    protected Queue<Item> items;
 
     public double getPrice(){
         return Double.valueOf(this.price);
@@ -31,7 +28,7 @@ public class Product{
 
     @Override
     public String toString() {
-        return String.format("\n Name: %s\n Price: %s \n Quantity: %s", this.name, this.price, this.quantity);
+        return String.format("\n Flavor: %s\n Price: %s \n Quantity: %s", this.flavor, this.price, this.quantity);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package Store;
+package Inventory;
 
 public class Item {
     public int id;

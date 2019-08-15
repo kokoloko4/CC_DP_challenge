@@ -1,7 +1,8 @@
+import Inventory.*;
 import People.Person;
-import Store.Item;
-import Store.Product;
+import People.PersonFactory;
 import Store.Store;
+import Utils.Utils;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -30,29 +31,21 @@ public class Main {
         clients.add(PersonFactory.createClient(43.2, BigInteger.valueOf(33)));
 
         List<Product> productsList = new ArrayList<>();
-        Queue<Item> vanillaCookie_items = new LinkedList<Item>();
-        Queue<Item> chocolateCookie_items = new LinkedList<Item>();
-        Queue<Item> lactoseFreeMilk_items = new LinkedList<Item>();
-        Queue<Item> NormalMilk_items = new LinkedList<Item>();
 
+        ProductFactory cookieFactory = new CookieFactory();
+        ProductFactory milkFactory = new MilkFactory();
 
+        Product vanillaCookie = cookieFactory.createVanillaProduct();
+        Product chocolateCookie = cookieFactory.createChocolateProduct();
 
-        Product vanillaCookie = new Cookie ("vanilla cookie", "1.5", "24", vanillaCookie_items);
-        vanillaCookie.addItems(generateItemsList(24));
-
-        Product ChocolateCookie = new Cookie ("chocolate cookie", "2.0", "17", chocolateCookie_items);
-        ChocolateCookie.addItems(generateItemsList(17));
-
-        Product VanillaMilk = new Milk ("vanilla milk", "3.6", "22", lactoseFreeMilk_items);
-        VanillaMilk.addItems(generateItemsList(22));
-
-        Product chocolateMilk = new Milk ("chocolate milk", "3.1", "54", NormalMilk_items);
-        chocolateMilk.addItems(generateItemsList(54));
+        Product vanillaMilk = milkFactory.createVanillaProduct();
+        Product chocolateMilk = milkFactory.createChocolateProduct();
 
         productsList.add(vanillaCookie);
-        productsList.add(ChocolateCookie);
-        productsList.add(VanillaMilk);
+        productsList.add(chocolateCookie);
+        productsList.add(vanillaMilk);
         productsList.add(chocolateMilk);
+
         Store store = new Store(employeesNames,employeesIds,employeesAddresses,employeesphones,"tiendita", productsList);
 
         store.openStore();
