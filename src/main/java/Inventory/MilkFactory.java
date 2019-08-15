@@ -12,4 +12,9 @@ public class MilkFactory extends  ProductFactory{
     public Product createChocolateProduct() {
         return new Milk("Chocolate",  "3.1", "54", new LinkedList<Item>());
     }
+
+    @Override
+    public Product createStrawBerryProduct() {
+        return new Milk("StrawBerry",  "5.0", "27", new LinkedList<Item>());
+    }
 }

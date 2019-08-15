@@ -12,14 +12,18 @@ public class Store {
 
     private static Store store;
 
-    public List<Person> employees = new LinkedList<Person>();
-    public String nombre;
-    public List<Product> productsList;
+    private List<Person> employees = new LinkedList<Person>();
+    private String nombre;
+    private List<Product> productsList;
 
     private Store(List<Person> employees, String nombre, List<Product> productsList) {
         this.employees = employees;
         this.nombre = nombre;
         this.productsList = productsList;
+    }
+
+    public List<Product> getProductsList(){
+        return this.productsList;
     }
 
     public static Store getStore(List<Person> employees, String nombre, List<Product> productsList){
@@ -39,21 +43,6 @@ public class Store {
 
     public void openStore(){
         System.out.println("Store is open");
-    }
-
-    public void sell(Product product, Client client){
-        double price = 0;
-        for (int i=0; i<productsList.size(); i++){
-            if(product.equals(productsList.get(i))){
-                price = productsList.get(i).getPrice();
-                client.budget = client.budget - price;
-                client.itemsPurchased.add(productsList.get(i).removeItem());
-
-            }
-        }
-        if (price==0){
-            System.out.println("That product isn't exists on this store");
-        }
     }
 
     public void closeStore(){

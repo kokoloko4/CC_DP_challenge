@@ -12,5 +12,4 @@ public class PersonFactory {
 
     public static Person createEmployee () { return new Employee(); }
 
-
 }

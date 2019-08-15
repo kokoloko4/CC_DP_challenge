@@ -1,6 +1,8 @@
 package People;
 
 import Inventory.Item;
+import Inventory.Product;
+import Store.Store;
 import Utils.Utils;
 
 import java.math.BigInteger;
@@ -10,7 +12,7 @@ import java.util.List;
 public class Client extends Person {
     public double budget;
     public BigInteger age;
-    public List<Item> itemsPurchased;
+    public List<Product> itemsPurchased;
 
     public Client(double budget, BigInteger age) {
         super.name = Utils.generateName();
@@ -22,7 +24,12 @@ public class Client extends Person {
         this.itemsPurchased = new ArrayList<>();
     }
 
-    public void buy(){
-
+    public void obtainBill(Store store){
+        if (!itemsPurchased.isEmpty()){
+            System.out.println("Factura del cliente "+ super.getName());
+            for (int j = 0 ; j < this.itemsPurchased.size() ; j++){
+                System.out.println(this.itemsPurchased.get(j));
+            }
+        }
     }
 }
