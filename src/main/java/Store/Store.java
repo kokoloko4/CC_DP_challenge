@@ -1,25 +1,25 @@
 package Store;
 
 import Inventory.Product;
-import People.Client;
 import People.Person;
-
-import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class Store {
 
     private static Store store;
 
-    private List<Person> employees = new LinkedList<Person>();
-    private String nombre;
+    private List<Person> employees;
+    private String name;
     private List<Product> productsList;
 
-    private Store(List<Person> employees, String nombre, List<Product> productsList) {
+    private Store(List<Person> employees, String name, List<Product> productsList) {
         this.employees = employees;
-        this.nombre = nombre;
+        this.name = name;
         this.productsList = productsList;
+    }
+
+    public List<Person> getEmployees() {
+        return employees;
     }
 
     public List<Product> getProductsList(){
@@ -29,11 +29,8 @@ public class Store {
     public static Store getStore(List<Person> employees, String nombre, List<Product> productsList){
         if (store == null)
         {
-            // To make thread safe
             synchronized (Store.class)
             {
-                // check again as multiple threads
-                // can reach above step
                 if (store==null)
                     store = new Store(employees, nombre, productsList);
             }
@@ -42,7 +39,7 @@ public class Store {
     }
 
     public void openStore(){
-        System.out.println("Store is open");
+        System.out.println(this.name + " is open");
     }
 
     public void closeStore(){

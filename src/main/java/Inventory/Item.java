@@ -11,6 +11,9 @@ public class Item {
         this.price = price;
     }
 
+    /**
+     * @return Returna a string of product information
+     */
     @Override
     public String toString() {
         return String.format("\tId: %d\t Name: %s\t Price: %s\n", this.id, this.name, this.price);
