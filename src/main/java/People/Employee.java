@@ -19,8 +19,7 @@ public class Employee extends Person {
             if(product.equals(store.getProductsList().get(i))){
                 price = store.getProductsList().get(i).getPrice();
                 client.budget = client.budget - price;
-                client.itemsPurchased.add(store.getProductsList().get(i));
-                store.getProductsList().get(i).removeItem();
+                client.itemsPurchased.add(store.getProductsList().get(i).removeItem());
             }
         }
         if (price==0){

@@ -8,7 +8,7 @@ import java.util.Queue;
 
 public abstract class Product{
 
-    protected String flavor;
+    protected String productName;
     protected String price;
     protected String quantity;
     protected Queue<Item> items;
@@ -28,7 +28,7 @@ public abstract class Product{
 
     @Override
     public String toString() {
-        return String.format("\n Flavor: %s\n Price: %s \n Quantity: %s", this.flavor, this.price, this.quantity);
+        return String.format("\n Name: %s\t Price: %s \t Quantity: %s", this.productName, this.price, this.quantity);
     }
 
     @Override

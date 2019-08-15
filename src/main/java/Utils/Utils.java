@@ -26,12 +26,12 @@ public class Utils {
         return faker.number().digits(9);
     }
 
-    public static List<Item> generateItemsList(int size){
+    public static List<Item> generateItemsList(int size, String name, String price){
         List<Item> items = new LinkedList<Item>();
         for (int i=0;i<size;i++){
-            Item item = new Item(faker.number().numberBetween(0,1000000));
+            Item item = new Item(faker.number().numberBetween(0,1000000), name, price);
             while (isItemInList(item, items)){
-                item = new Item(faker.number().numberBetween(0,1000000)); }
+                item = new Item(faker.number().numberBetween(0,1000000), name, price); }
             items.add(item);
         }
         return items;

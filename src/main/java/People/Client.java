@@ -12,7 +12,7 @@ import java.util.List;
 public class Client extends Person {
     public double budget;
     public BigInteger age;
-    public List<Product> itemsPurchased;
+    public List<Item> itemsPurchased;
 
     public Client(double budget, BigInteger age) {
         super.name = Utils.generateName();
@@ -26,9 +26,9 @@ public class Client extends Person {
 
     public void obtainBill(Store store){
         if (!itemsPurchased.isEmpty()){
-            System.out.println("Factura del cliente "+ super.getName());
+            System.out.println("\t************Factura del cliente "+ super.getName()+"************");
             for (int j = 0 ; j < this.itemsPurchased.size() ; j++){
-                System.out.println(this.itemsPurchased.get(j));
+                System.out.print(this.itemsPurchased.get(j));
             }
         }
     }
