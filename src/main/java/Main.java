@@ -1,4 +1,6 @@
 import Inventory.*;
+import People.Client;
+import People.Employee;
 import People.Person;
 import Store.Store;
 
@@ -11,20 +13,20 @@ public class Main {
 
         List<Person> employees = new ArrayList<>();
         for(int i = 0; i < 5 ; i++) {
-            employees.add(new Person.EmployeeBuilder().build());
+            employees.add(new Employee.EmployeeBuilder().build());
         }
 
         List<Person> clients = new ArrayList<>();
-        clients.add(new Person.ClientBuilder().setBudget(13.5).setAge(BigInteger.valueOf(23)).setItemsPurchased().build());
-        clients.add(new Person.ClientBuilder().setBudget(10.8).setAge(BigInteger.valueOf(31)).setItemsPurchased().build());
-        clients.add(new Person.ClientBuilder().setBudget(9.1).setAge(BigInteger.valueOf(19)).setItemsPurchased().build());
-        clients.add(new Person.ClientBuilder().setBudget(27.8).setAge(BigInteger.valueOf(25)).setItemsPurchased().build());
-        clients.add(new Person.ClientBuilder().setBudget(5.0).setAge(BigInteger.valueOf(37)).setItemsPurchased().build());
-        clients.add(new Person.ClientBuilder().setBudget(14.6).setAge(BigInteger.valueOf(47)).setItemsPurchased().build());
-        clients.add(new Person.ClientBuilder().setBudget(11.2).setAge(BigInteger.valueOf(81)).setItemsPurchased().build());
-        clients.add(new Person.ClientBuilder().setBudget(10.1).setAge(BigInteger.valueOf(42)).setItemsPurchased().build());
-        clients.add(new Person.ClientBuilder().setBudget(13.0).setAge(BigInteger.valueOf(19)).setItemsPurchased().build());
-        clients.add(new Person.ClientBuilder().setBudget(43.2).setAge(BigInteger.valueOf(33)).setItemsPurchased().build());
+        clients.add(new Client.ClientBuilder().setBudget(13.5).setAge(BigInteger.valueOf(23)).setItemsPurchased().build());
+        clients.add(new Client.ClientBuilder().setBudget(10.8).setAge(BigInteger.valueOf(31)).setItemsPurchased().build());
+        clients.add(new Client.ClientBuilder().setBudget(9.1).setAge(BigInteger.valueOf(19)).setItemsPurchased().build());
+        clients.add(new Client.ClientBuilder().setBudget(27.8).setAge(BigInteger.valueOf(25)).setItemsPurchased().build());
+        clients.add(new Client.ClientBuilder().setBudget(5.0).setAge(BigInteger.valueOf(37)).setItemsPurchased().build());
+        clients.add(new Client.ClientBuilder().setBudget(14.6).setAge(BigInteger.valueOf(47)).setItemsPurchased().build());
+        clients.add(new Client.ClientBuilder().setBudget(11.2).setAge(BigInteger.valueOf(81)).setItemsPurchased().build());
+        clients.add(new Client.ClientBuilder().setBudget(10.1).setAge(BigInteger.valueOf(42)).setItemsPurchased().build());
+        clients.add(new Client.ClientBuilder().setBudget(13.0).setAge(BigInteger.valueOf(19)).setItemsPurchased().build());
+        clients.add(new Client.ClientBuilder().setBudget(43.2).setAge(BigInteger.valueOf(33)).setItemsPurchased().build());
 
         List<Product> productsList = new ArrayList<>();
 
@@ -58,73 +60,73 @@ public class Main {
 
         store.openStore();
 
-        Person e = store.getEmployees().get(0);
-        e.sell(vanillaCookie, clients.get(0), store);
-        e =  store.getEmployees().get(1);
-        e.sell(strawBerryYogurt,  clients.get(1), store);
-        e =  store.getEmployees().get(2);
-        e.sell(vanillaCookie,  clients.get(2), store);
-        e =  store.getEmployees().get(3);
-        e.sell(strawBerryCookie,  clients.get(3), store);
-        e =  store.getEmployees().get(4);
-        e.sell(vanillaMilk,  clients.get(4), store);
-        e =  store.getEmployees().get(0);
-        e.sell(vanillaCookie,  clients.get(5), store);
-        e =  store.getEmployees().get(1);
-        e.sell(strawBerryMilk,  clients.get(6), store);
-        e =  store.getEmployees().get(2);
-        e.sell(strawBerryCookie,  clients.get(7), store);
-        e =  store.getEmployees().get(3);
-        e.sell(vanillaCookie,  clients.get(8), store);
-        e =  store.getEmployees().get(4);
-        e.sell(chocolateCookie,  clients.get(9), store);
-        e =  store.getEmployees().get(4);
-        e.sell(strawBerryCookie,  clients.get(0), store);
-        e =  store.getEmployees().get(0);
-        e.sell(strawBerryCookie,  clients.get(1), store);
-        e =  store.getEmployees().get(3);
-        e.sell(vanillaCookie,  clients.get(2), store);
-        e =  store.getEmployees().get(4);
-        e.sell(vanillaCookie,  clients.get(1), store);
-        e =  store.getEmployees().get(4);
-        e.sell(vanillaMilk,  clients.get(2), store);
-        e =  store.getEmployees().get(4);
-        e.sell(vanillaCookie,  clients.get(3), store);
-        e =  store.getEmployees().get(3);
-        e.sell(strawBerryMilk,  clients.get(4), store);
-        e =  store.getEmployees().get(3);
-        e.sell(vanillaCookie,  clients.get(5), store);
-        e =  store.getEmployees().get(3);
-        e.sell(chocolateCookie,  clients.get(6), store);
-        e =  store.getEmployees().get(3);
-        e.sell(vanillaMilk,  clients.get(7), store);
-        e =  store.getEmployees().get(0);
-        e.sell(vanillaCookie,  clients.get(8), store);
-        e =  store.getEmployees().get(0);
-        e.sell(vanillaCookie,  clients.get(9), store);
-        e =  store.getEmployees().get(2);
-        e.sell(strawBerryMilk,  clients.get(0), store);
-        e =  store.getEmployees().get(2);
-        e.sell(strawBerryCookie,  clients.get(4), store);
-        e =  store.getEmployees().get(2);
-        e.sell(vanillaCookie,  clients.get(5), store);
-        e =  store.getEmployees().get(2);
-        e.sell(vanillaYogurt,  clients.get(6), store);
-        e =  store.getEmployees().get(2);
-        e.sell(vanillaCookie,  clients.get(7), store);
-        e =  store.getEmployees().get(2);
-        e.sell(strawBerryCookie,  clients.get(8), store);
-        e =  store.getEmployees().get(2);
-        e.sell(vanillaYogurt,  clients.get(9), store);
-        e =  store.getEmployees().get(4);
-        e.sell(strawBerryMilk, clients.get(0), store);
-        e =  store.getEmployees().get(0);
-        e.sell(strawBerryCookie,  clients.get(0), store);
+        Employee e = (Employee) store.getEmployees().get(0);
+        e.sell(vanillaCookie, (Client) clients.get(0), store);
+        e = (Employee) store.getEmployees().get(1);
+        e.sell(strawBerryYogurt, (Client) clients.get(1), store);
+        e = (Employee) store.getEmployees().get(2);
+        e.sell(vanillaCookie, (Client) clients.get(2), store);
+        e = (Employee) store.getEmployees().get(3);
+        e.sell(strawBerryCookie, (Client) clients.get(3), store);
+        e = (Employee) store.getEmployees().get(4);
+        e.sell(vanillaMilk, (Client) clients.get(4), store);
+        e = (Employee) store.getEmployees().get(0);
+        e.sell(vanillaCookie, (Client) clients.get(5), store);
+        e = (Employee) store.getEmployees().get(1);
+        e.sell(strawBerryMilk, (Client) clients.get(6), store);
+        e = (Employee) store.getEmployees().get(2);
+        e.sell(strawBerryCookie, (Client) clients.get(7), store);
+        e = (Employee) store.getEmployees().get(3);
+        e.sell(vanillaCookie, (Client) clients.get(8), store);
+        e = (Employee) store.getEmployees().get(4);
+        e.sell(chocolateCookie, (Client) clients.get(9), store);
+        e = (Employee) store.getEmployees().get(4);
+        e.sell(strawBerryCookie, (Client) clients.get(0), store);
+        e = (Employee) store.getEmployees().get(0);
+        e.sell(strawBerryCookie, (Client) clients.get(1), store);
+        e = (Employee) store.getEmployees().get(3);
+        e.sell(vanillaCookie, (Client) clients.get(2), store);
+        e = (Employee) store.getEmployees().get(4);
+        e.sell(vanillaCookie, (Client) clients.get(1), store);
+        e = (Employee) store.getEmployees().get(4);
+        e.sell(vanillaMilk, (Client) clients.get(2), store);
+        e = (Employee) store.getEmployees().get(4);
+        e.sell(vanillaCookie, (Client) clients.get(3), store);
+        e = (Employee) store.getEmployees().get(3);
+        e.sell(strawBerryMilk, (Client) clients.get(4), store);
+        e = (Employee) store.getEmployees().get(3);
+        e.sell(vanillaCookie, (Client) clients.get(5), store);
+        e = (Employee) store.getEmployees().get(3);
+        e.sell(chocolateCookie, (Client) clients.get(6), store);
+        e = (Employee) store.getEmployees().get(3);
+        e.sell(vanillaMilk, (Client) clients.get(7), store);
+        e = (Employee) store.getEmployees().get(0);
+        e.sell(vanillaCookie, (Client) clients.get(8), store);
+        e = (Employee) store.getEmployees().get(0);
+        e.sell(vanillaCookie, (Client) clients.get(9), store);
+        e = (Employee) store.getEmployees().get(2);
+        e.sell(strawBerryMilk, (Client) clients.get(0), store);
+        e = (Employee) store.getEmployees().get(2);
+        e.sell(strawBerryCookie,(Client)  clients.get(4), store);
+        e = (Employee) store.getEmployees().get(2);
+        e.sell(vanillaCookie, (Client) clients.get(5), store);
+        e = (Employee) store.getEmployees().get(2);
+        e.sell(vanillaYogurt, (Client) clients.get(6), store);
+        e = (Employee) store.getEmployees().get(2);
+        e.sell(vanillaCookie, (Client) clients.get(7), store);
+        e = (Employee) store.getEmployees().get(2);
+        e.sell(strawBerryCookie, (Client) clients.get(8), store);
+        e = (Employee) store.getEmployees().get(2);
+        e.sell(vanillaYogurt, (Client) clients.get(9), store);
+        e = (Employee) store.getEmployees().get(4);
+        e.sell(strawBerryMilk, (Client) clients.get(0), store);
+        e = (Employee) store.getEmployees().get(0);
+        e.sell(strawBerryCookie, (Client) clients.get(0), store);
 
         store.closeStore();
 
         for (int i = 0 ; i < clients.size() ; i++){
-            Person c =  clients.get(i);
+            Client c = (Client) clients.get(i);
             c.obtainBill();
         }
     }

@@ -29,7 +29,7 @@ public abstract class Product{
     }
 
     /**
-     * @param items_to_add
+     * @param items_to_add List of items to add.
      */
     public void addItems(List<Item> items_to_add){
         this.items.addAll(items_to_add);
@@ -44,8 +44,8 @@ public abstract class Product{
     }
 
     /**
-     * @param object
-     * @return
+     * @param object Compare a product's name
+     * @return True if the products are equal or false in opposite case
      */
     @Override
     public boolean equals(Object object){

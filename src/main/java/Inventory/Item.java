@@ -5,6 +5,11 @@ public class Item {
     public String name;
     public String price;
 
+    /**
+     * @param id Id's product
+     * @param name Name's product
+     * @param price Price's product
+     */
     public Item(int id, String name, String price) {
         this.id = id;
         this.name = name;
@@ -12,7 +17,7 @@ public class Item {
     }
 
     /**
-     * @return Returna a string of product information
+     * @return Returns of product's information
      */
     @Override
     public String toString() {
