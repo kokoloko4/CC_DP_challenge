@@ -2,30 +2,43 @@ package Store;
 
 import Inventory.Product;
 import People.Client;
+import People.Person;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Store {
-    public List<String> employeesNames = new LinkedList<String>();
-    public List<String> employeesIds = new LinkedList<>();
-    public List<String> employeesAddresses = new ArrayList<>();
-    public List<String> employeesphones = new LinkedList<>();
+
+    private static Store store;
+
+    public List<Person> employees = new LinkedList<Person>();
     public String nombre;
     public List<Product> productsList;
 
-    public Store(List<String> employeesNames, List<String> employeesIds, List<String> employeesAddresses, List<String> employeesphones, String nombre, List<Product> productsList) {
-        this.employeesNames = employeesNames;
-        this.employeesIds = employeesIds;
-        this.employeesAddresses = employeesAddresses;
-        this.employeesphones = employeesphones;
+    private Store(List<Person> employees, String nombre, List<Product> productsList) {
+        this.employees = employees;
         this.nombre = nombre;
         this.productsList = productsList;
     }
 
+    public static Store getStore(List<Person> employees, String nombre, List<Product> productsList){
+        if (store == null)
+        {
+            // To make thread safe
+            synchronized (Store.class)
+            {
+                // check again as multiple threads
+                // can reach above step
+                if (store==null)
+                    store = new Store(employees, nombre, productsList);
+            }
+        }
+        return store;
+    }
+
     public void openStore(){
-        System.out.println("Store.Store is open");
+        System.out.println("Store is open");
     }
 
     public void sell(Product product, Client client){

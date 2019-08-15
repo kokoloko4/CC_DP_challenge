@@ -2,13 +2,10 @@ import Inventory.*;
 import People.Person;
 import People.PersonFactory;
 import Store.Store;
-import Utils.Utils;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 
 public class Main {
     public static void main(String args[]){
@@ -46,26 +43,24 @@ public class Main {
         productsList.add(vanillaMilk);
         productsList.add(chocolateMilk);
 
-        Store store = new Store(employeesNames,employeesIds,employeesAddresses,employeesphones,"tiendita", productsList);
+        Store store = Store.getStore(employees,"tiendita", productsList);
 
         store.openStore();
 
-
-       store.sell(vanillaCookie, clients.get(0));
+        /*store.sell(vanillaCookie, clients.get(0));
         store.sell(vanillaCookie, clients.get(0));
         store.sell(vanillaCookie, clients.get(4));
         store.sell(ChocolateCookie, clients.get(4));
         store.sell(vanillaCookie, clients.get(7));
-           store.sell(vanillaCookie, clients.get(7));
+        store.sell(vanillaCookie, clients.get(7));
         store.sell(vanillaCookie, clients.get(7));
         store.sell(vanillaCookie, clients.get(3));
         store.sell(chocolateMilk, clients.get(9));
         store.sell(ChocolateCookie, clients.get(9));
         store.sell(ChocolateCookie, clients.get(9));
-   store.sell(ChocolateCookie, clients.get(1));
+        store.sell(ChocolateCookie, clients.get(1));*/
 
         store.closeStore();
-
     }
 
 }
